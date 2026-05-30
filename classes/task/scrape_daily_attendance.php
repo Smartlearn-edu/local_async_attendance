@@ -64,7 +64,7 @@ class scrape_daily_attendance extends scheduled_task {
         $now = time();
 
         foreach ($students as $student) {
-            for ($i = $window_days; $i > 0; $i--) {
+            for ($i = $window_days; $i >= 0; $i--) {
                 // E.g., if window = 1, it scrapes exactly 1 day ago (yesterday).
                 $target_timestamp = strtotime("-{$i} days", $now);
                 $target_midnight = strtotime('today', $target_timestamp);

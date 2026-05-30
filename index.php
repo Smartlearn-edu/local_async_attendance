@@ -106,7 +106,7 @@ $totalcount = $DB->count_records_sql("SELECT COUNT(1) FROM {local_async_attendan
 $offset = $page * $perpage;
 
 // Fetch records with user details.
-$sql = "SELECT a.*, u.firstname, u.lastname, u.email
+$sql = "SELECT a.*, u.firstname, u.lastname, u.firstnamephonetic, u.lastnamephonetic, u.middlename, u.alternatename, u.email
           FROM {local_async_attendance} a
           JOIN {user} u ON u.id = a.userid
           $where_sql
